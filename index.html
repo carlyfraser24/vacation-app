@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vacation Finder</title>
+
+  <!-- Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- =====================
+        HERO SECTION
+  ====================== -->
+  <header class="hero">
+    <!-- Background videos injected by JS -->
+    <div class="video-container"></div>
+
+    <div class="hero-content">
+      <h1>Discover Your Next Destination</h1>
+      <p class="hero-tagline">
+        Explore travel destinations through an interactive, filter-based discovery experience.
+      </p>
+      <button class="hero-cta" id="startExploring">
+        Start Exploring
+      </button>
+    </div>
+  </header>
+
+  <!-- =====================
+        FILTERS SECTION
+  ====================== -->
+  <section id="filters">
+    <h1>Vacation Finder</h1>
+
+    <div class="filters">
+      <div class="filter-group">
+        <label for="typeFilter">Type</label>
+        <select id="typeFilter">
+          <option value="all">All</option>
+          <option value="beach">Beach</option>
+          <option value="adventure">Adventure</option>
+          <option value="cultural">Cultural</option>
+          <option value="city">City</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label for="regionFilter">Region</label>
+        <select id="regionFilter">
+          <option value="all">All</option>
+          <option value="europe">Europe</option>
+          <option value="asia">Asia</option>
+          <option value="north-america">North America</option>
+          <option value="south-america">South America</option>
+          <option value="africa">Africa</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label for="budgetFilter">Budget</label>
+        <select id="budgetFilter">
+          <option value="all">All</option>
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+        </select>
+      </div>
+    </div>
+
+
+<div class="cards-container">
+  <div class="card" data-type="adventure" data-region="africa" data-budget="high">
+    <img src="media/adventure/serengeti-national-park.jpg" alt="Serengeti National Park" class="card-image">
+    <div class="card-info">
+      <h3>Serengeti National Park</h3>
+      <p>Adventure • Africa • High Budget</p>
+    </div>
+      <!-- Heart icon -->
+  <span class="favorite-heart" title="Add to Favorites">&#9825;</span>
+  </div>
+
+  <div class="card" data-type="cultural" data-region="africa" data-budget="medium">
+    <img src="media/culture/cairo-egypt.jpg" alt="Cairo, Egypt" class="card-image">
+    <div class="card-info">
+      <h3>Cairo, Egypt</h3>
+      <p>Cultural • Africa • Medium Budget</p>
+    </div>
+      <!-- Heart icon -->
+  <span class="favorite-heart" title="Add to Favorites">&#9825;</span>
+  </div>
+
+  <div class="card" data-type="adventure" data-region="south-america" data-budget="high">
+    <img src="media/adventure/patagonia.jpg" alt="Patagonia" class="card-image">
+    <div class="card-info">
+      <h3>Patagonia</h3>
+      <p>Adventure • South America • High Budget</p>
+    </div>
+      <!-- Heart icon -->
+  <span class="favorite-heart" title="Add to Favorites">&#9825;</span>
+  </div>
+
+ <div class="card" data-type="cultural" data-region="south-america" data-budget="low">
+  <img src="media/culture/sucre-bolivia.jpg" alt="Sucre, Bolivia" class="card-image">
+  <div class="card-info">
+    <h3>Sucre, Bolivia</h3>
+    <p>Cultural • South America • Low Budget</p>
+  </div>
+    <!-- Heart icon -->
+  <span class="favorite-heart" title="Add to Favorites">&#9825;</span>
+</div>
+
+  <div class="card" data-type="beach" data-region="north-america" data-budget="low">
+    <img src="media/beaches/puerto-escondido.jpg" alt="Puerto Escondido, Mexico" class="card-image">
+    <div class="card-info">
+      <h3>Puerto Escondido, Mexico</h3>
+      <p>Beach • North America • Low Budget</p>
+    </div>
+      <!-- Heart icon -->
+  <span class="favorite-heart" title="Add to Favorites">&#9825;</span>
+  </div>
+
+  <div class="card" data-type="beach" data-region="north-america" data-budget="high">
+    <img src="media/beaches/maui.jpg" alt="Maui: Wailea & Kapalua" class="card-image">
+    <div class="card-info">
+      <h3>Maui: Wailea & Kapalua</h3>
+      <p>Beach • North America • High Budget</p>
+    </div>
+      <!-- Heart icon -->
+  <span class="favorite-heart" title="Add to Favorites">&#9825;</span>
+  </div>
+
+  <div class="card" data-type="beach" data-region="north-america" data-budget="medium">
+    <img src="media/beaches/outer-banks.jpg" alt="Outer Banks, North Carolina" class="card-image">
+    <div class="card-info">
+      <h3>Outer Banks, NC</h3>
+      <p>Beach • North America • Medium Budget</p>
+    </div>
+      <!-- Heart icon -->
+  <span class="favorite-heart" title="Add to Favorites">&#9825;</span>
+  </div>
+
+  <div class="card" data-type="adventure" data-region="north-america" data-budget="low">
+    <img src="media/adventure/arches-national-park.jpeg" alt="Arches National Park, Utah" class="card-image">
+    <div class="card-info">
+      <h3>Arches National Park, Utah</h3>
+      <p>Adventure • North America • Low Budget</p>
+    </div>
+      <!-- Heart icon -->
+  <span class="favorite-heart" title="Add to Favorites">&#9825;</span>
+  </div>
+
+  <div class="card" data-type="city" data-region="north-america" data-budget="low">
+    <img src="media/cities/new-orleans.jpg" alt="New Orleans, Louisiana" class="card-image">
+    <div class="card-info">
+      <h3>New Orleans, Louisiana</h3>
+      <p>City • North America • Low Budget</p>
+    </div>
+      <!-- Heart icon -->
+  <span class="favorite-heart" title="Add to Favorites">&#9825;</span>
+  </div>
+
+  <div class="card" data-type="city" data-region="north-america" data-budget="medium">
+    <img src="media/cities/denver.jpg" alt="Denver, Colorado" class="card-image">
+    <div class="card-info">
+      <h3>Denver, Colorado</h3>
+      <p>City • North America • Medium Budget</p>
+    </div>
+      <!-- Heart icon -->
+  <span class="favorite-heart" title="Add to Favorites">&#9825;</span>
+  </div>
+
+  <div class="card" data-type="city" data-region="north-america" data-budget="high">
+    <img src="media/cities/new-york.jpg" alt="New York City, New York" class="card-image">
+    <div class="card-info">
+      <h3>New York City, New York</h3>
+      <p>City • North America • High Budget</p>
+    </div>
+      <!-- Heart icon -->
+  <span class="favorite-heart" title="Add to Favorites">&#9825;</span>
+  </div>
+
+  <div class="card" data-type="cultural" data-region="europe" data-budget="low">
+    <img src="media/culture/krakow-poland.jpg" alt="Krakow, Poland" class="card-image">
+    <div class="card-info">
+      <h3>Krakow, Poland</h3>
+      <p>Cultural • Europe • Low Budget</p>
+    </div>
+      <!-- Heart icon -->
+  <span class="favorite-heart" title="Add to Favorites">&#9825;</span>
+  </div>
+
+  <div class="card" data-type="cultural" data-region="europe" data-budget="medium">
+    <img src="media/culture/florance-italy.jpg" alt="Florence, Italy" class="card-image">
+    <div class="card-info">
+      <h3>Florence, Italy</h3>
+      <p>Cultural • Europe • Medium Budget</p>
+    </div>
+      <!-- Heart icon -->
+  <span class="favorite-heart" title="Add to Favorites">&#9825;</span>
+  </div>
+
+  <div class="card" data-type="cultural" data-region="europe" data-budget="high">
+    <img src="media/culture/barelona-spain.png" alt="Barcelona, Spain" class="card-image">
+    <div class="card-info">
+      <h3>Barcelona, Spain</h3>
+      <p>Cultural • Europe • High Budget</p>
+    </div>
+      <!-- Heart icon -->
+  <span class="favorite-heart" title="Add to Favorites">&#9825;</span>
+  </div>
+
+  <div class="card" data-type="city" data-region="europe" data-budget="high">
+    <img src="media/cities/paris-france.jpg" alt="Paris, France" class="card-image">
+    <div class="card-info">
+      <h3>Paris, France</h3>
+      <p>City • Europe • High Budget</p>
+    </div>
+      <!-- Heart icon -->
+  <span class="favorite-heart" title="Add to Favorites">&#9825;</span>
+  </div>
+
+  <div class="card" data-type="city" data-region="europe" data-budget="low">
+    <img src="media/cities/berlin-germany.jpg" alt="Berlin, Germany" class="card-image">
+    <div class="card-info">
+      <h3>Berlin, Germany</h3>
+      <p>City • Europe • Low Budget</p>
+    </div>
+      <!-- Heart icon -->
+  <span class="favorite-heart" title="Add to Favorites">&#9825;</span>
+  </div>
+
+  <div class="card" data-type="beach" data-region="europe" data-budget="medium">
+    <img src="media/beaches/naxos-greece.jpg" alt="Naxos, Greece" class="card-image">
+    <div class="card-info">
+      <h3>Naxos, Greece</h3>
+      <p>Beach • Europe • Medium Budget</p>
+    </div>
+      <!-- Heart icon -->
+  <span class="favorite-heart" title="Add to Favorites">&#9825;</span>
+  </div>
+
+  <div class="card" data-type="beach" data-region="europe" data-budget="high">
+    <img src="media/beaches/ibiza.jpg" alt="Ibiza, Spain" class="card-image">
+    <div class="card-info">
+      <h3>Ibiza, Spain</h3>
+      <p>Beach • Europe • High Budget</p>
+    </div>
+      <!-- Heart icon -->
+  <span class="favorite-heart" title="Add to Favorites">&#9825;</span>
+  </div>
+
+  <div class="card" data-type="city" data-region="asia" data-budget="medium">
+    <img src="media/cities/toyko.jpg" alt="Tokyo, Japan" class="card-image">
+    <div class="card-info">
+      <h3>Tokyo, Japan</h3>
+      <p>City • Asia • Medium Budget</p>
+    </div>
+      <!-- Heart icon -->
+  <span class="favorite-heart" title="Add to Favorites">&#9825;</span>
+  </div>
+
+  <div class="card" data-type="city" data-region="asia" data-budget="high">
+    <img src="media/cities/dubai.jpg" alt="Dubai, UAE" class="card-image">
+    <div class="card-info">
+      <h3>Dubai, India</h3>
+      <p>City • Asia • High Budget</p>
+    </div>
+      <!-- Heart icon -->
+  <span class="favorite-heart" title="Add to Favorites">&#9825;</span>
+  </div>
+
+  <div class="card" data-type="cultural" data-region="asia" data-budget="high">
+    <img src="media/culture/beiging.jpg" alt="Beijing, China" class="card-image">
+    <div class="card-info">
+      <h3>Beijing, China</h3>
+      <p>Cultural • Asia • High Budget</p>
+    </div>
+      <!-- Heart icon -->
+  <span class="favorite-heart" title="Add to Favorites">&#9825;</span>
+  </div>
+
+  <div class="card" data-type="beach" data-region="asia" data-budget="medium">
+    <img src="media/beaches/bali.jpg" alt="Bali, Indonesia" class="card-image">
+    <div class="card-info">
+      <h3>Bali, Indonesia</h3>
+      <p>Beach • Asia • Medium Budget</p>
+    </div>
+      <!-- Heart icon -->
+  <span class="favorite-heart" title="Add to Favorites">&#9825;</span>
+  </div>
+
+  <div class="card" data-type="adventure" data-region="europe" data-budget="high">
+    <img src="media/adventure/icelandic-highlands.jpg" alt="Icelandic Highlands" class="card-image">
+    <div class="card-info">
+      <h3>Icelandic Highlands</h3>
+      <p>Adventure • Europe • High Budget</p>
+    </div>
+      <!-- Heart icon -->
+  <span class="favorite-heart" title="Add to Favorites">&#9825;</span>
+  </div>
+
+  <div class="card" data-type="adventure" data-region="asia" data-budget="low">
+    <img src="media/adventure/chaing-mai.jpg" alt="Chiang Mai, Thailand" class="card-image">
+    <div class="card-info">
+      <h3>Chiang Mai, Thailand</h3>
+      <p>Adventure • Asia • Low Budget</p>
+    </div>
+      <!-- Heart icon -->
+  <span class="favorite-heart" title="Add to Favorites">&#9825;</span>
+  </div>
+
+    <div class="card" data-type="beach" data-region="europe" data-budget="low">
+    <img src="media/beaches/albanian-riviera.jpg" alt="Albanian Riviera" class="card-image">
+    <div class="card-info">
+      <h3>Albanian Riviera</h3>
+      <p>Beach • Europe • Low Budget</p>
+    </div>
+      <!-- Heart icon -->
+  <span class="favorite-heart" title="Add to Favorites">&#9825;</span>
+  </div>
+
+    <div class="card" data-type="beach" data-region="asia" data-budget="low">
+    <img src="media/beaches/da-nang-vietnam.jpg" alt="Da Nang, Vietnam" class="card-image">
+    <div class="card-info">
+      <h3>Da Nang, Vietnam</h3>
+      <p>Beach • Asia • Low Budget</p>
+    </div>
+      <!-- Heart icon -->
+  <span class="favorite-heart" title="Add to Favorites">&#9825;</span>
+  </div>
+
+  <div class="card" data-type="beach" data-region="asia" data-budget="high">
+    <img src="media/beaches/maldives.jpg" alt="The Maldives" class="card-image">
+    <div class="card-info">
+      <h3>The Maldives</h3>
+      <p>Beach • Asia • High Budget</p>
+    </div>
+      <!-- Heart icon -->
+  <span class="favorite-heart" title="Add to Favorites">&#9825;</span>
+  </div>
+
+    <div class="card" data-type="beach" data-region="south-america" data-budget="low">
+    <img src="media/beaches/mancora-peru.jpg" alt="Mancora, Peru" class="card-image">
+    <div class="card-info">
+      <h3>Mancora, Peru</h3>
+      <p>Beach • South America • Low Budget</p>
+    </div>
+      <!-- Heart icon -->
+  <span class="favorite-heart" title="Add to Favorites">&#9825;</span>
+  </div>
+
+  <div class="card" data-type="beach" data-region="south-america" data-budget="medium">
+    <img src="media/beaches/cartagena-and-rosario-islands-columbia.jpg" alt="Cartagena & Rosario Islands, Columbia" class="card-image">
+    <div class="card-info">
+      <h3>Rosario Islands, Columbia</h3>
+      <p>Beach • South America • Medium Budget</p>
+    </div>
+      <!-- Heart icon -->
+  <span class="favorite-heart" title="Add to Favorites">&#9825;</span>
+  </div>
+
+   <div class="card" data-type="beach" data-region="south-america" data-budget="high">
+    <img src="media/beaches/porto-de-galinhas-brazil.jpg" alt="Porto De Galinhas, Brazil" class="card-image">
+    <div class="card-info">
+      <h3>Porto De Galinhas, Brazil</h3>
+      <p>Beach • South America • High Budget</p>
+    </div>
+      <!-- Heart icon -->
+  <span class="favorite-heart" title="Add to Favorites">&#9825;</span>
+  </div>
+
+   <div class="card" data-type="beach" data-region="africa" data-budget="low">
+    <img src="media/beaches/diani-beach-kenya.jpg" alt="Diani Beach, Kenya" class="card-image">
+    <div class="card-info">
+      <h3>Diani Beach, Kenya</h3>
+      <p>Beach • America • Low Budget</p>
+    </div>
+      <!-- Heart icon -->
+  <span class="favorite-heart" title="Add to Favorites">&#9825;</span>
+  </div>
+
+  <div class="card" data-type="beach" data-region="africa" data-budget="medium">
+    <img src="media/beaches/zanzibar.jpg" alt="Zanzibar, Tanzania" class="card-image">
+    <div class="card-info">
+      <h3>Zanzibar, Tanzania</h3>
+      <p>Beach • Africa • Medium Budget</p>
+    </div>
+      <!-- Heart icon -->
+  <span class="favorite-heart" title="Add to Favorites">&#9825;</span>
+  </div>
+
+  <div class="card" data-type="beach" data-region="africa" data-budget="high">
+    <img src="media/beaches/bazaruto-archipelago-mozambique.jpeg" alt="Bazaruto Archipelago, Mozambique" class="card-image">
+    <div class="card-info">
+      <h3>Bazaruto Archipelago, Mozambique</h3>
+      <p>Beach • Africa • High Budget</p>
+    </div>
+      <!-- Heart icon -->
+  <span class="favorite-heart" title="Add to Favorites">&#9825;</span>
+  </div>
+
+  <div class="card" data-type="adventure" data-region="europe" data-budget="low">
+    <img src="media/adventure/carpathian-mountains-romania.jpg" alt="Carpathian Mountains, Romania" class="card-image">
+    <div class="card-info">
+      <h3>Carpathian Mountains, Romania</h3>
+      <p>Adventure • Europe • Low Budget</p>
+    </div>
+      <!-- Heart icon -->
+  <span class="favorite-heart" title="Add to Favorites">&#9825;</span>
+  </div>
+
+    <div class="card" data-type="adventure" data-region="europe" data-budget="medium">
+    <img src="media/adventure/scottish-highlands.jpg" alt="Scottish Highlands" class="card-image">
+    <div class="card-info">
+      <h3>Scottish Highlands</h3>
+      <p>Adventure • Europe • Medium Budget</p>
+    </div>
+      <!-- Heart icon -->
+  <span class="favorite-heart" title="Add to Favorites">&#9825;</span>
+  </div>
+
+    <div class="card" data-type="adventure" data-region="asia" data-budget="medium">
+    <img src="media/adventure/java-volcano-indonesia.jpg" alt="Java Volcano, Indonesia" class="card-image">
+    <div class="card-info">
+      <h3>Java Volcano, Indonesia</h3>
+      <p>Adventure • Asia • Medium Budget</p>
+    </div>
+      <!-- Heart icon -->
+  <span class="favorite-heart" title="Add to Favorites">&#9825;</span>
+  </div>
+
+ <div class="card" data-type="adventure" data-region="asia" data-budget="high">
+    <img src="media/adventure/himalayas-nepal.jpg" alt="Himalayas, Napal" class="card-image">
+    <div class="card-info">
+      <h3>Himalayas, Nepal</h3>
+      <p>Adventure • Asia • High Budget</p>
+    </div>
+      <!-- Heart icon -->
+  <span class="favorite-heart" title="Add to Favorites">&#9825;</span>
+  </div>
+
+   <div class="card" data-type="adventure" data-region="north-america" data-budget="high">
+    <img src="media/adventure/denali-region-alaska.jpg" alt="Denali Region, Alaska" class="card-image">
+    <div class="card-info">
+      <h3>Denali Region, Alaska</h3>
+      <p>Adventure • North America • High Budget</p>
+    </div>
+      <!-- Heart icon -->
+  <span class="favorite-heart" title="Add to Favorites">&#9825;</span>
+  </div>
+
+  <div class="card" data-type="adventure" data-region="north-america" data-budget="medium">
+    <img src="media/adventure/olympic-national-park-washington.jpg" alt="Olympic National Park, Washington" class="card-image">
+    <div class="card-info">
+      <h3>Olympic National Park, WA</h3>
+      <p>Adventure • North America • Medium Budget</p>
+    </div>
+      <!-- Heart icon -->
+  <span class="favorite-heart" title="Add to Favorites">&#9825;</span>
+  </div>
+
+  <div class="card" data-type="adventure" data-region="south-america" data-budget="low">
+    <img src="media/adventure/huaraz-peru.jpg" alt="Huaraz, Peru" class="card-image">
+    <div class="card-info">
+      <h3>Huaraz, Peru</h3>
+      <p>Adventure • South America • Low Budget</p>
+    </div>
+      <!-- Heart icon -->
+  <span class="favorite-heart" title="Add to Favorites">&#9825;</span>
+  </div>
+
+  
+  <div class="card" data-type="adventure" data-region="south-america" data-budget="medium">
+    <img src="media/adventure/banos-ecuador.jpg" alt="Baños, Ecuador" class="card-image">
+    <div class="card-info">
+      <h3>Baños, Ecuador</h3>
+      <p>Adventure • South America • Medium Budget</p>
+    </div>
+      <!-- Heart icon -->
+  <span class="favorite-heart" title="Add to Favorites">&#9825;</span>
+  </div>
+
+    <div class="card" data-type="adventure" data-region="africa" data-budget="medium">
+    <img src="media/adventure/atlas-mountains-morocco.jpg" alt="Atlas Mountains, Morocco" class="card-image">
+    <div class="card-info">
+      <h3>Atlas Mountains, Morocco</h3>
+      <p>Adventure • Africa • Medium Budget</p>
+    </div>
+      <!-- Heart icon -->
+  <span class="favorite-heart" title="Add to Favorites">&#9825;</span>
+  </div>
+
+    <div class="card" data-type="adventure" data-region="africa" data-budget="low">
+    <img src="media/adventure/blyde-river-canon-south-africa.jpg" alt="Blyde River Canyon, South Africa" class="card-image">
+    <div class="card-info">
+      <h3>Blyde River Canyon, South Africa</h3>
+      <p>Adventure • Africa • Low Budget</p>
+    </div>
+      <!-- Heart icon -->
+  <span class="favorite-heart" title="Add to Favorites">&#9825;</span>
+  </div>
+
+    <div class="card" data-type="cultural" data-region="asia" data-budget="medium">
+    <img src="media/culture/kyoto-japan.jpg" alt="Kyoto, Japan" class="card-image">
+    <div class="card-info">
+      <h3>Kyoto, Japan</h3>
+      <p>Cultural • Asia • Medium Budget</p>
+    </div>
+      <!-- Heart icon -->
+  <span class="favorite-heart" title="Add to Favorites">&#9825;</span>
+  </div>
+
+    <div class="card" data-type="cultural" data-region="asia" data-budget="low">
+    <img src="media/culture/hoi-an-vietnam.jpg" alt="Hoi An, Vietnam" class="card-image">
+    <div class="card-info">
+      <h3>Hoi An, Vietnam</h3>
+      <p>Cultural • Asia • Low Budget</p>
+    </div>
+      <!-- Heart icon -->
+  <span class="favorite-heart" title="Add to Favorites">&#9825;</span>
+  </div>
+
+
+   <div class="card" data-type="cultural" data-region="north-america" data-budget="low">
+  <img src="media/culture/oaxaca-mexico.jpg" alt="Oaxaca, Mexico" class="card-image">
+  <div class="card-info">
+    <h3>Oaxaca, Mexico</h3>
+    <p>Cultural • North America • Low Budget</p>
+  </div>
+    <!-- Heart icon -->
+  <span class="favorite-heart" title="Add to Favorites">&#9825;</span>
+</div>
+
+ <div class="card" data-type="cultural" data-region="north-america" data-budget="medium">
+  <img src="media/culture/quebec-city-canada.jpg" alt="Quebec City, Canada" class="card-image">
+  <div class="card-info">
+    <h3>Quebec City, Canada</h3>
+    <p>Cultural • North America • Medium Budget</p>
+  </div>
+    <!-- Heart icon -->
+  <span class="favorite-heart" title="Add to Favorites">&#9825;</span>
+</div>
+
+    <div class="card" data-type="cultural" data-region="north-america" data-budget="high">
+  <img src="media/culture/santa-fe-usa.jpg" alt="Santa Fe, New Mexico" class="card-image">
+  <div class="card-info">
+    <h3>Santa Fe, New Mexico</h3>
+    <p>Cultural • North America • High Budget</p>
+  </div>
+    <!-- Heart icon -->
+  <span class="favorite-heart" title="Add to Favorites">&#9825;</span>
+</div>
+
+ <div class="card" data-type="cultural" data-region="south-america" data-budget="high">
+  <img src="media/culture/machu-picchu-peru.jpg" alt="Machu Picchu, Peru" class="card-image">
+  <div class="card-info">
+    <h3>Machu Picchu, Peru</h3>
+    <p>Cultural • South America • High Budget</p>
+  </div>
+    <!-- Heart icon -->
+  <span class="favorite-heart" title="Add to Favorites">&#9825;</span>
+</div>
+
+
+   <div class="card" data-type="cultural" data-region="south-america" data-budget="medium">
+  <img src="media/culture/quito-ecuador.jpg" alt="Quito, Ecuador" class="card-image">
+  <div class="card-info">
+    <h3>Quito, Ecuador</h3>
+    <p>Cultural • South America • Medium Budget</p>
+  </div>
+    <!-- Heart icon -->
+  <span class="favorite-heart" title="Add to Favorites">&#9825;</span>
+</div>
+
+     <div class="card" data-type="cultural" data-region="africa" data-budget="low">
+  <img src="media/culture/addis-ababa-ethiopia.jpg" alt="Addis Ababa, Ethiopia" class="card-image">
+  <div class="card-info">
+    <h3>Addis Ababa, Ethiopia</h3>
+    <p>Cultural • Africa • Low Budget</p>
+  </div>
+    <!-- Heart icon -->
+  <span class="favorite-heart" title="Add to Favorites">&#9825;</span>
+</div>
+
+   <div class="card" data-type="cultural" data-region="africa" data-budget="high">
+  <img src="media/culture/marrakech-morocco.jpg" alt="Marrakech, Morocco" class="card-image">
+  <div class="card-info">
+    <h3>Marrakech, Morocco</h3>
+    <p>Cultural • Africa • High Budget</p>
+  </div>
+    <!-- Heart icon -->
+  <span class="favorite-heart" title="Add to Favorites">&#9825;</span>
+</div>
+
+
+     <div class="card" data-type="city" data-region="europe" data-budget="medium">
+  <img src="media/cities/dublin-ireland.jpg" alt="Dublin, Ireland" class="card-image">
+  <div class="card-info">
+    <h3>Dublin, Ireland</h3>
+    <p>City • Europe • Medium Budget</p>
+  </div>
+    <!-- Heart icon -->
+  <span class="favorite-heart" title="Add to Favorites">&#9825;</span>
+</div>
+
+    <div class="card" data-type="city" data-region="asia" data-budget="low">
+  <img src="media/cities/shanghai-china.jpg" alt="Shanghai, China" class="card-image">
+  <div class="card-info">
+    <h3>Shanghai, China</h3>
+    <p>City • Asia • Low Budget</p>
+  </div>
+    <!-- Heart icon -->
+  <span class="favorite-heart" title="Add to Favorites">&#9825;</span>
+</div>
+
+<div class="card" data-type="city" data-region="south-america" data-budget="low">
+  <img src="media/cities/bogota-columbia.jpg" alt="Bogotá, Colombia" class="card-image">
+  <div class="card-info">
+    <h3>Bogotá, Colombia</h3>
+    <p>City • South America • Low Budget</p>
+  </div>
+    <!-- Heart icon -->
+  <span class="favorite-heart" title="Add to Favorites">&#9825;</span>
+</div>
+  
+<div class="card" data-type="city" data-region="south-america" data-budget="medium">
+  <img src="media/cities/buenos-aires-argentina.jpeg" alt="Buenos Aires, Argentina" class="card-image">
+  <div class="card-info">
+    <h3>Buenos Aires, Argentina</h3>
+    <p>City • South America • Medium Budget</p>
+  </div>
+    <!-- Heart icon -->
+  <span class="favorite-heart" title="Add to Favorites">&#9825;</span>
+</div>
+  
+ <div class="card" data-type="city" data-region="south-america" data-budget="high">
+  <img src="media/cities/rio-de-janiero-brazil.jpg" alt="Rio de Janeiro, Brazil" class="card-image">
+  <div class="card-info">
+    <h3>Rio de Janeiro, Brazil</h3>
+    <p>City • South America • High Budget</p>
+  </div>
+    <!-- Heart icon -->
+  <span class="favorite-heart" title="Add to Favorites">&#9825;</span>
+</div>
+
+  <div class="card" data-type="city" data-region="africa" data-budget="low">
+  <img src="media/cities/kigali-rwanda.jpeg" alt="Kigali, Rwanda" class="card-image">
+  <div class="card-info">
+    <h3>Kigali, Rwanda</h3>
+    <p>City • Africa • Low Budget</p>
+  </div>
+    <!-- Heart icon -->
+  <span class="favorite-heart" title="Add to Favorites">&#9825;</span>
+</div>
+
+  
+ <div class="card" data-type="city" data-region="africa" data-budget="medium">
+  <img src="media/cities/cape-town-south-africa.jpg" alt="Cape Town, South Africa" class="card-image">
+  <div class="card-info">
+    <h3>Cape Town, South Africa</h3>
+    <p>City • Africa • Medium Budget</p>
+  </div>
+    <!-- Heart icon -->
+  <span class="favorite-heart" title="Add to Favorites">&#9825;</span>
+</div>
+
+  
+<div class="card" data-type="city" data-region="africa" data-budget="high">
+  <img src="media/cities/johannesburg-south-africa.jpg" alt="Johannesburg, South Africa" class="card-image">
+  <div class="card-info">
+    <h3>Johannesburg, South Africa</h3>
+    <p>City • Africa • High Budget</p>
+  </div>
+   <!-- Heart icon -->
+  <span class="favorite-heart" title="Add to Favorites">&#9825;</span>
+</div>
+
+
+
+</div>
+</section>
+
+<h2>My Favorites</h2>
+<div class="favorites-container"></div>
+
+  <!-- Favorited cards will appear here -->
+</div>
+
+<footer class="site-footer">
+  <p>© 2026 Travel App. All Rights Reserved.</p>
+  <p>
+    <a href="#" style="color:#f9fafb; margin:0 0.5rem; text-decoration:none;">Privacy Policy</a> |
+    <a href="#" style="color:#f9fafb; margin:0 0.5rem; text-decoration:none;">Terms of Service</a>
+  </p>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
