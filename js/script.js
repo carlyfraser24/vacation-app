@@ -1,3 +1,126 @@
+/* =====================================
+   FILTERING SYSTEM
+===================================== */
+
+const typeFilter = document.getElementById('typeFilter');
+const regionFilter = document.getElementById('regionFilter');
+const budgetFilter = document.getElementById('budgetFilter');
+const cards = document.querySelectorAll('.card'); // updated from .location
+
+function filterLocations() {
+  const typeValue = typeFilter.value;
+  const regionValue = regionFilter.value;
+  const budgetValue = budgetFilter.value;
+
+  cards.forEach(card => {
+    const cardType = card.getAttribute('data-type');
+    const cardRegion = card.getAttribute('data-region');
+    const cardBudget = card.getAttribute('data-budget');
+
+    if ((typeValue === 'all' || cardType === typeValue) &&
+        (regionValue === 'all' || cardRegion === regionValue) &&
+        (budgetValue === 'all' || cardBudget === budgetValue)) {
+      card.classList.remove('hide');
+    } else {
+      card.classList.add('hide');
+    }
+  });
+}
+
+// EVENT LISTENERS
+
+typeFilter.addEventListener('change', filterLocations);
+regionFilter.addEventListener('change', filterLocations);
+budgetFilter.addEventListener('change', filterLocations);
+
+
+/* =====================================
+   HEART FAVORITES (UNICODE → EMOJI)
+===================================== */
+document.addEventListener("DOMContentLoaded", () => {
+  const UNICODE_HEART = "♡";
+  const EMOJI_HEART = "❤️";
+
+  const allCards = document.querySelectorAll(".card");
+  const favoritesContainer = document.querySelector(".favorites-container");
+
+  let savedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+  function saveFavorites() {
+    localStorage.setItem("favorites", JSON.stringify(savedFavorites));
+  }
+
+  function isFavorited(title) {
+    return savedFavorites.includes(title);
+  }
+
+  function toggleHeartUI(heart, active) {
+    heart.classList.toggle("active", active);
+    heart.textContent = active ? EMOJI_HEART : UNICODE_HEART;
+  }
+
+  function updateMainCards() {
+    allCards.forEach(card => {
+      const title = card.querySelector("h3").textContent;
+      const heart = card.querySelector(".favorite-heart");
+
+      toggleHeartUI(heart, isFavorited(title));
+    });
+  }
+
+  function buildFavorites() {
+    favoritesContainer.innerHTML = "";
+
+    savedFavorites.forEach(title => {
+      const originalCard = [...allCards].find(
+        card => card.querySelector("h3").textContent === title
+      );
+
+      if (!originalCard) return;
+
+      const clone = originalCard.cloneNode(true);
+      const cloneHeart = clone.querySelector(".favorite-heart");
+
+      toggleHeartUI(cloneHeart, true);
+
+      // 👇 UNFAVORITE FROM FAVORITES SECTION
+      cloneHeart.addEventListener("click", () => {
+        savedFavorites = savedFavorites.filter(item => item !== title);
+        saveFavorites();
+        updateMainCards();
+        buildFavorites();
+      });
+
+      favoritesContainer.appendChild(clone);
+    });
+  }
+
+  // MAIN CARD HEART CLICKS
+  allCards.forEach(card => {
+    const heart = card.querySelector(".favorite-heart");
+    const title = card.querySelector("h3").textContent;
+
+    toggleHeartUI(heart, isFavorited(title));
+
+    heart.addEventListener("click", () => {
+      if (isFavorited(title)) {
+        savedFavorites = savedFavorites.filter(item => item !== title);
+      } else {
+        savedFavorites.push(title);
+      }
+
+      saveFavorites();
+      updateMainCards();
+      buildFavorites();
+    });
+  });
+
+  // INITIAL LOAD
+  updateMainCards();
+  buildFavorites();
+});
+
+
 // VIDEO 
 const videoContainer = document.querySelector('.video-container');
 const videoFiles = [
@@ -62,3 +185,17 @@ front.addEventListener('ended', function cycle() {
 });
 
 
+
+// BUTTON
+
+document.addEventListener("DOMContentLoaded", () => {
+  const startBtn = document.getElementById("startExploring");
+  const filtersSection = document.getElementById("filters");
+
+  if (!startBtn || !filtersSection) return;
+
+  startBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    filtersSection.scrollIntoView({ behavior: "smooth" });
+  });
+});
