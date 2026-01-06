@@ -125,8 +125,6 @@ document.addEventListener("DOMContentLoaded", () => {
 const videoContainer = document.querySelector('.video-container');
 const videoFiles = [
   'media/video/video3.mp4',
-  'media/video/video4.mp4',
-  'media/video/video5.mp4',
   'media/video/video7.mp4',
   'media/video/video8.mp4',
   'media/video/video9.mp4'
@@ -202,3 +200,4 @@ document.addEventListener("DOMContentLoaded", () => {
     filtersSection.scrollIntoView({ behavior: "smooth" });
   });
 });
+
