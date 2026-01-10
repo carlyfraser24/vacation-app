@@ -56,43 +56,45 @@ body {
 
 /* ==== BUTTONS STYLING ==== */
 
-.hero-cta {
-  padding: 0.85rem 2.25rem;
-  font-size: 1rem;
-  font-weight: 600;
-  border-radius: 6px;
-  cursor: pointer;
-  color: white;
-  background-color: #1F2937;
-  border: 1.5px solid white;
-}
-
-.hero-cta-2 {
-  padding: 0.85rem 2.25rem;
-  font-size: 1rem;
-  font-weight: 600;
-  border-radius: 6px;
-  cursor: pointer;
-  color: white;
-  background-color: #1F2937;
-  border: 1.5px solid white;
-}
-
-.hero-cta:hover {
-  background-color: #374151;
- 
-}
-
-.hero-cta-2:hover {
-  background-color: #374151;
- 
-}
-
 .hero-buttons {
   display: flex;
   gap: 1rem; 
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap; /* allows buttons to wrap on small screens */
+}
+
+.hero-cta,
+.hero-cta-2 {
+  padding: 0.6rem 1.5rem;   /* slightly smaller and consistent padding */
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+  background-color: #1F2937;
+  border: 1.5px solid white;
+  text-align: center;
+  width: auto;          /* let buttons size naturally to text + padding */
+  min-width: 140px;     /* ensures buttons don’t get too small */
+  transition: all 0.2s ease;
+}
+
+.hero-cta:hover,
+.hero-cta-2:hover {
+  background-color: #374151;
+}
+
+
+/* ==== BUTTON MOBILE STYLING ==== */
+
+@media (max-width: 480px) {
+  .hero-cta,
+  .hero-cta-2 {
+    width: 180px;           /* fixed width for consistency */
+    padding: 0.5rem 1rem;   /* smaller padding for mobile */
+    font-size: 0.9rem;      /* slightly smaller text */
+  }
 }
 
 
@@ -397,6 +399,8 @@ h2 {
 .site-footer p {
   margin: 0.5rem 0;
 }
+
+
 
 
 
