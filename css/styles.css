@@ -141,16 +141,16 @@ body {
 
   .hero h1 {
     margin-bottom: 0.8rem;
-    margin-left: 2px;
-    margin-right: 2px;
+    margin-left: 0.8rem;
+    margin-right: 0.8rem;
 
   }
 
   .hero-tagline {
-    font-size: 1.2rem; /* smaller tagline */
+    font-size: 1.2rem;
     margin-bottom: 1rem;
-     margin-left: 2px;
-    margin-right: 2px;
+    margin-left: 3.5rem;
+    margin-right: 3.5rem;
     
   }
 
@@ -162,6 +162,7 @@ body {
     padding: 0 0.5rem; /* reduce side padding */
   }
 }
+
 
 
 
@@ -399,6 +400,7 @@ h2 {
 .site-footer p {
   margin: 0.5rem 0;
 }
+
 
 
 
