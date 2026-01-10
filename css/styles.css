@@ -9,27 +9,36 @@
 }
 
 body {
-  font-family: Roboto, sans-serif;
+  font-family: 'Roboto', sans-serif;
   line-height: 1.6;
-  color: #f9fafb;
   background-color: #121212;
 }
 
-section {
-   background-color: #121212;
-}
 
 
 /* ===================== 
       HERO SECTION
 ======================== */
 
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.4);
+}
 
 .hero h1 {
   font-size: clamp(2.5rem, 5vw, 3.5rem);
   font-weight: 700;
   letter-spacing: -0.03em;
   margin-bottom: 1rem;
+  
 }
 
 .hero-tagline {
@@ -45,43 +54,49 @@ section {
 }
 
 
+/* ==== BUTTONS STYLING ==== */
+
 .hero-cta {
   padding: 0.85rem 2.25rem;
   font-size: 1rem;
   font-weight: 600;
   border-radius: 6px;
-  border: none;
   cursor: pointer;
-  background-color: #2563eb;
-  color: #ffffff;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  color: white;
+  background-color: #1F2937;
+  border: 1.5px solid white;
+}
+
+.hero-cta-2 {
+  padding: 0.85rem 2.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+  background-color: #1F2937;
+  border: 1.5px solid white;
 }
 
 .hero-cta:hover {
-  background-color: #1d4ed8;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px black;
+  background-color: #374151;
+ 
 }
 
-.hero-cta:active {
-  transform: translateY(0);
-  box-shadow: 0 4px 10px #333333;
-
+.hero-cta-2:hover {
+  background-color: #374151;
+ 
 }
 
-.hero {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
+.hero-buttons {
   display: flex;
-  align-items: center;
+  gap: 1rem; 
   justify-content: center;
-  text-align: center;
-  background-color: #111111;
-  color: white;
-  opacity: 0.8;
+  align-items: center;
 }
+
+
+/* ==== VIDEO STYLING ==== */
 
 .video-container {
   position: absolute;
@@ -114,9 +129,8 @@ section {
   padding: 0 1rem;
 }
 
-/* ===================== 
-      HERO SECTION - MOBILE
-======================== */
+
+/* ==== HERO MOBILE STYLING ==== */
 
 @media (max-width: 600px) {
   .hero {
@@ -147,8 +161,10 @@ section {
   }
 }
 
+
+
 /* ===================== 
-      FILTER SECTION
+      FILTERS SECTION
 ======================== */
 
 section h1 {
@@ -197,9 +213,7 @@ section h1 {
 }
 
 
-/* ===================== 
-      CARDS
-======================== */
+/* ==== CARDS STYLING ==== */
 
 .cards-container {
   display: flex;
@@ -209,7 +223,7 @@ section h1 {
 }
 
 .card {
-  background-color: #1f2937; /* dark card background */
+  background-color: #1f2937;
   color: #fff;
   border-radius: 12px;
   overflow: hidden;
@@ -222,6 +236,7 @@ section h1 {
   width: 250px;
   aspect-ratio: 1 / 1;
   max-width: 300px;
+  position: relative;
 }
 
 .card:hover {
@@ -271,9 +286,8 @@ section h1 {
   flex-shrink: 0;
 }
 
-/* ===================== 
-      CARDS - MOBILE
-======================== */
+
+/* ==== CARDS MOBILE STYLING ==== */
 
 @media (max-width: 600px) {
   .cards-container,
@@ -310,44 +324,7 @@ section h1 {
 }
 
 
-/* ===================== 
-      FOOTER
-======================== */
-
-.site-footer {
-  background-color: #1f2937; /* Dark gray/blue */
-  color: #f9fafb;           /* Off-white text */
-  text-align: center;
-  padding: 6rem 1rem;
-  font-size: 0.9rem;
-  margin: 1 1.5rem;
-
-}
-
-.site-footer a {
-  color: #f9fafb;
-  text-decoration: none;
-  margin: 0 0.5rem;
-  transition: color 0.2s ease;
-}
-
-.site-footer a:hover {
-  color: #3b82f6; /* Blue hover effect */
-}
-
-.site-footer p {
-  margin: 0.5rem 0;
-}
-
-
-
-/* ===================== 
-      HEART 
-======================== */
-
-.card {
-  position: relative;
-}
+/* ==== HEART STYLING ==== */
 
 h2 {
   font-size: clamp(2.5rem, 5vw, 3.5rem);
@@ -393,5 +370,37 @@ h2 {
 .favorite-heart.active {
   animation: pop 0.3s ease;
 }
+
+
+
+/* ===================== 
+      FOOTER SECTION
+======================== */
+
+.site-footer {
+  background-color: #1f2937; 
+  color: #f9fafb;           
+  text-align: center;
+  padding: 6rem 1rem;
+  font-size: 0.9rem;
+  margin: 1 1.5rem;
+
+}
+
+.site-footer a {
+  color: #f9fafb;
+  text-decoration: none;
+  margin: 0 0.5rem;
+  transition: color 0.2s ease;
+}
+
+.site-footer p {
+  margin: 0.5rem 0;
+}
+
+
+
+
+
 
 
