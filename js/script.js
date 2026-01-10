@@ -1,4 +1,4 @@
-/* =====================================
+/* =====================================/* =====================================
    FILTERING SYSTEM
 ===================================== */
 
@@ -186,7 +186,7 @@ front.addEventListener('ended', function cycle() {
 
 
 
-// BUTTON
+// BUTTON START EXPLORING
 
 document.addEventListener("DOMContentLoaded", () => {
   const startBtn = document.getElementById("startExploring");
@@ -199,3 +199,19 @@ document.addEventListener("DOMContentLoaded", () => {
     filtersSection.scrollIntoView({ behavior: "smooth" });
   });
 });
+
+// BUTTON VIEW FAVORITES
+
+document.addEventListener("DOMContentLoaded", () => {
+  const startBtn = document.getElementById("viewFavorites");
+  const favoritesSection = document.getElementById("favorites"); // renamed to match usage
+
+  if (!startBtn || !favoritesSection) return;
+
+  startBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    favoritesSection.scrollIntoView({ behavior: "smooth" });
+  });
+});
+
+
