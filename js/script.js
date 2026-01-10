@@ -1,6 +1,6 @@
-/* =====================================/* =====================================
-   FILTERING SYSTEM
-===================================== */
+/* ========================
+     FILTERING SYSTEM
+========================= */
 
 const typeFilter = document.getElementById('typeFilter');
 const regionFilter = document.getElementById('regionFilter');
@@ -34,9 +34,11 @@ regionFilter.addEventListener('change', filterLocations);
 budgetFilter.addEventListener('change', filterLocations);
 
 
-/* =====================================
-   HEART FAVORITES (UNICODE → EMOJI)
-===================================== */
+
+/* ========================
+     HEART - FAVORITES
+========================= */
+
 document.addEventListener("DOMContentLoaded", () => {
   const UNICODE_HEART = "♡";
   const EMOJI_HEART = "❤️";
@@ -83,7 +85,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
       toggleHeartUI(cloneHeart, true);
 
-      // 👇 UNFAVORITE FROM FAVORITES SECTION
+
+      // UNFAVORITE FROM FAVORITES SECTION
+
       cloneHeart.addEventListener("click", () => {
         savedFavorites = savedFavorites.filter(item => item !== title);
         saveFavorites();
@@ -95,7 +99,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+
   // MAIN CARD HEART CLICKS
+
   allCards.forEach(card => {
     const heart = card.querySelector(".favorite-heart");
     const title = card.querySelector("h3").textContent;
@@ -116,22 +122,28 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // INITIAL LOAD
+
   updateMainCards();
   buildFavorites();
 });
 
 
-// VIDEO 
+/* ========================
+   VIDEO - HERO SECTION
+========================= */
+
 const videoContainer = document.querySelector('.video-container');
 const videoFiles = [
+  'media/video/video8.mp4',
   'media/video/video3.mp4',
-  'media/video/video7.mp4',
-  'media/video/video8.mp4'
+  'media/video/video7.mp4'
 ];
 
 let currentIndex = 0;
 
+
 // Create two video elements
+
 const videoA = document.createElement('video');
 const videoB = document.createElement('video');
 
@@ -154,7 +166,9 @@ const videoB = document.createElement('video');
 let front = videoA;
 let back = videoB;
 
+
 // Load the first video immediately
+
 front.src = videoFiles[currentIndex];
 front.style.opacity = 1;
 front.play();
@@ -185,6 +199,9 @@ front.addEventListener('ended', function cycle() {
 });
 
 
+/* ========================
+   BUTTONS - HERO SECTION
+========================= */
 
 // BUTTON START EXPLORING
 
@@ -213,5 +230,8 @@ document.addEventListener("DOMContentLoaded", () => {
     favoritesSection.scrollIntoView({ behavior: "smooth" });
   });
 });
+
+
+
 
 
